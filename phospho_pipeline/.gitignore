@@ -1,0 +1,37 @@
+# Python cache/build
+__pycache__/
+*.py[cod]
+*.so
+*.egg-info/
+build/
+dist/
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Editor/OS
+.DS_Store
+.idea/
+.vscode/
+
+# Secrets and API keys
+.env
+*.env
+**/secrets*
+**/*api_key*
+**/*apikey*
+**/*API_KEY*
+**/*OPENAI*
+**/*AZURE*
+**/*VERSA*
+**/*UNIFIED*
+
+# Output data and runs
+data/
+outputs/
+runs/
