@@ -35,3 +35,6 @@ ENV/
 data/
 outputs/
 runs/
+
+# Reference-only script (do not publish)
+OG_phosphorylation_pipeline_updated.py

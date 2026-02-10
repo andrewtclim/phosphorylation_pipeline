@@ -1,1 +1,2 @@
-# TODO: Add runtime dependencies (e.g., requests, pandas, langchain).
+requests
+langchain-openai

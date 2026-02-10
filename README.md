@@ -1,32 +1,26 @@
 # PhosphoAtlas Phosphorylation Pipeline
 
-A modular pipeline for retrieving reviewed human proteins from UniProt, extracting PTM comments, normalizing phosphorylation interactions, and exporting analysis-ready tables.
+Learning-first, modular reimplementation of the original UniProt -> PTM -> LLM normalization workflow.
 
 ## Folder Structure
 
-```
+```text
 notebooks/
-  (WIP notebook already exists here — do not touch)
+  WIP_pipeline_.ipynb
+  TEST_pipeline.ipynb
 
 phospho/
   __init__.py
-  config.py
-  uniprot_client.py
-  uniprot_parse.py
-  llm_client.py
-  prompts.py
-  normalize_ptm.py
-  parse_llm_output.py
-  schemas.py
-  io.py
-  validation.py
+  uniprot.py        # UniProt search/fetch + parsing helpers
+  llm_normalize.py  # LLM client + normalization/parsing stubs
+  io_utils.py       # run directory + output write helpers
 
 scripts/
   run_pipeline.py
 
 tests/
-  test_uniprot_parse.py
-  test_parse_llm_output.py
+  test_uniprot.py
+  test_llm_normalize.py
 
 requirements.txt
 README.md
@@ -35,7 +29,7 @@ README.md
 
 ## How To Run
 
-```
+```bash
 python -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
@@ -44,4 +38,5 @@ python scripts/run_pipeline.py
 
 ## Notes
 
-The original script (`OG_phosphorylation_pipeline_updated.py`) and the WIP notebook in `notebooks/` are reference materials only and should not be modified.
+- `OG_phosphorylation_pipeline_updated.py` is reference-only and ignored by git.
+- Notebooks under `notebooks/` are for exploration/testing and are not pipeline source modules.
