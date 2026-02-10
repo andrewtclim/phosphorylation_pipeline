@@ -33,6 +33,7 @@ def search_uniprot(query: str, size: int = 500, cursor: str | None = None) -> di
 
 def uniprot_request_data(accession_id: str, subset: str | None = None) -> dict:
     """Search UniProt by accession and return either the full search response or one field from the first result."""
+    # NOTE: With search enpoints we can get a direct list of results (in our fetch_entry func) and don't have to parse for "results"
     # build params
     params = {
         "query": f"accession:{accession_id}",  # adjust query to accession_id

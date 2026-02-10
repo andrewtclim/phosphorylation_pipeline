@@ -13,8 +13,13 @@ def get_primary_accession(entry: dict) -> str:
 
 def get_gene_symbol(entry: dict) -> str | None:
     """Extract the preferred gene symbol from a UniProt entry."""
-    # TODO: Implement gene symbol extraction.
-    raise NotImplementedError
+    # go to gene dict
+    genes = entry.get("genes")
+    if not genes:
+        return None
+    # under geneName return the value (aka its gene symbol)
+    gene_name = genes[0].get("geneName", {})
+    return gene_name.get('value')
 
 
 def get_protein_name(entry: dict) -> str | None:
