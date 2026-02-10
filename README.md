@@ -1,6 +1,6 @@
 # PhosphoAtlas Phosphorylation Pipeline
 
-Learning-first, modular reimplementation of the original UniProt -> PTM -> LLM normalization workflow.
+Modular reconstruction of the original UniProt -> PTM -> LLM normalization workflow.
 
 ## Folder Structure
 
