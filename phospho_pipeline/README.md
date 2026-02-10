@@ -44,5 +44,3 @@ python scripts/run_pipeline.py
 ```
 
 ## Notes
-
-The original Lukas script (`OG_phosphorylation_pipeline_updated.py`) and the WIP notebook in `notebooks/` are reference materials only and should not be modified.
