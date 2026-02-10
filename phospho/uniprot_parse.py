@@ -8,8 +8,7 @@ from __future__ import annotations
 
 def get_primary_accession(entry: dict) -> str:
     """Extract the primary accession from a UniProt entry."""
-    # TODO: Implement primary accession extraction.
-    raise NotImplementedError
+    return entry["primaryAccession"]
 
 
 def get_gene_symbol(entry: dict) -> str | None:
