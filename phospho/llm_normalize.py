@@ -1,10 +1,13 @@
-"""LLM prompt/client helpers and PTM normalization stubs."""
+"""LLM prompt/client helpers and PTM normalization utilities."""
 
 from __future__ import annotations
 
 import os
 
-from langchain_openai import AzureChatOpenAI
+try:
+    from langchain_openai import AzureChatOpenAI
+except ImportError:
+    AzureChatOpenAI = None
 
 
 PROTEIN_TO_GENE_PROMPT = """Map a protein full name to the canonical human gene symbol."""
@@ -19,7 +22,7 @@ Task:
 - Exclude transcription-only effects, indirect regulation, or "phosphorylation enhanced" style statements.
 - If phosphorylation is only a prerequisite for another process (e.g., ubiquitination), return N/A.
 - If no valid interaction exists, return exactly: N/A.
-- If autophosphorylation is stated, include {kinase_name}(kinase).
+- If autophosphorylation is stated, include {substrate_gene}(kinase).
 - If wording is uncertain ("probably"/"likely"), keep kinase extraction but mark uncertain in the kinase tag.
 
 Output format rules (strict):
@@ -37,7 +40,7 @@ Input: "Dephosphorylated in response to apoptotic stress (PubMed:27995898)."
 Output: N/A
 
 Input: "Autophosphorylated and phosphorylated during M-phase (PubMed:10518011)."
-Output: {kinase_name}(kinase), {substrate_gene}(substrate), N/A, PubMed:10518011
+Output: {substrate_gene}(kinase), {substrate_gene}(substrate), N/A, PubMed:10518011
 
 Now process this PTM text exactly under the rules above.
 """
@@ -72,36 +75,96 @@ def get_llm_client():
     )
 
 
+def build_ptm_prompt(ptm_text: str, substrate_gene: str) -> str:
+    """Build the full PTM normalization prompt for one PTM text input."""
+
+    # Start from the base instruction prompt and substitute template placeholders.
+    prompt = PTM_TO_INTERACTIONS_PROMPT.replace(
+        "{substrate_gene}", substrate_gene)
+
+    # Add record-specific context required for extraction.
+    prompt += f"\n\nSubstrate gene: {substrate_gene}"
+    prompt += f"\nPTM text: {ptm_text}"
+
+    return prompt
+
+
 def normalize_ptm_texts(ptm_texts: list[str], substrate_gene: str) -> list[str]:
     """Normalize PTM texts using the configured LLM."""
-    # Build LLM client object
+
+    # Build one LLM client instance for this batch.
     client = get_llm_client()
-    normalized_outputs = []
 
-    # Iterate through inputs (raw PTM annotations)
+    # Store one normalized output string per processed PTM input.
+    normalized_outputs: list[str] = []
+
+    # Iterate through raw PTM annotation texts.
     for ptm_text in ptm_texts:
-        # Build a prompt with base normalization instructions w/ current substrate gene and PTM text
-        prompt = f"{PTM_TO_INTERACTIONS_PROMPT}\n\nSubstrate gene: {substrate_gene}\nPTM text: {ptm_text}"
-        # Send and store response to LLM
-        response = client.invoke(prompt)
-        # append the normalized text outputs in a list
-        normalized_outputs.append(response.content if hasattr(
-            response, "content") else str(response))
+        # Skip empty PTM strings so we do not waste model calls.
+        if not ptm_text or not ptm_text.strip():
+            continue
 
+        # Build a record-specific prompt using base instructions + substrate context + PTM text.
+        prompt = build_ptm_prompt(ptm_text, substrate_gene)
+
+        # Send prompt to model and capture response object.
+        response = client.invoke(prompt)
+
+        # Append response content as text (fallback to str(response) if needed).
+        normalized_outputs.append(
+            response.content if hasattr(response, "content") else str(response)
+        )
+
+    # Return all normalized text outputs for downstream parsing.
     return normalized_outputs
 
 
 def parse_interactions(raw_text: str) -> list[dict]:
-    """Parse line-based LLM output into dictionaries (minimal parser)."""
-    # Hold one dict per usable output line
+    """Parse line-based LLM output into structured interaction dictionaries."""
+    # Hold one dict per usable output line.
     records: list[dict] = []
-    # Split full text into individual lines  "line1\nline2\n" -> ["line1", "line2"]
+    # Split full text into individual lines.
     for line in raw_text.splitlines():
-        line = line.strip()  # remove leadind/training white spaces
-        # skip all lines that are empty or N/A
+        line = line.strip()
+        # Skip empty lines or sentinel N/A lines.
         if not line or line.upper() == "N/A":
             continue
-        # Keep each usable line as raw : text_outputs
-        records.append({"raw": line})
-    # return all kept records for downstream processing
+
+        # Parse one expected "KINASE, SUBSTRATE, SITE, PMID" line.
+        parts = [p.strip() for p in line.split(",")]
+        # Preserve malformed lines for debugging.
+        if len(parts) != 4:
+            records.append(
+                {"raw": line, "parse_error": "expected 4 comma-separated fields"}
+            )
+            continue
+
+        # Convert the parsed fields into a stable downstream schema.
+        kinase, substrate, site, pmid = parts
+        records.append({
+            "kinase": kinase,
+            "substrate": substrate,
+            "site": site,
+            "pmid": pmid,
+            "raw": line,
+        })
+
+    # Return all parsed records for downstream processing.
     return records
+
+
+def normalize_and_parse_ptm_texts(
+    ptm_texts: list[str],
+    substrate_gene: str,
+) -> list[dict]:
+    """Normalize PTM texts with the LLM and parse results into dictionaries."""
+
+    # Accumulate parsed interaction records across all PTM text inputs.
+    parsed_records: list[dict] = []
+
+    # Normalize each PTM text (LLM output is raw text), then parse into structured dict records.
+    for raw_output in normalize_ptm_texts(ptm_texts, substrate_gene):
+        parsed_records.extend(parse_interactions(raw_output))
+
+    # Return one combined list of structured interaction records.
+    return parsed_records

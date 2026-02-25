@@ -1,0 +1,21 @@
+To run the pipeline (from repo root):
+
+First try:
+python scripts/run_pipeline.py
+
+If that fails with "No module named phospho", run:
+python -m scripts.run_pipeline
+This runs it as a module so Python can resolve package imports from the repo root.
+
+If VERSA_API_KEY is not recognized, load .env into your shell first:
+set -a
+source .env
+set +a
+
+This does:
+- set -a: auto-export variables
+- source .env: load env vars from file
+- set +a: turn auto-export back off
+
+Then run again:
+python -m scripts.run_pipeline
