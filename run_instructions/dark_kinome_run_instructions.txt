@@ -1,0 +1,21 @@
+Dark Kinome PTM Dataset — Run Instructions
+
+From repo root:
+
+1) Activate your environment
+conda activate ucsf-radonc
+
+2) Ensure env vars are loaded (if needed for UniProt/LLM-related modules)
+set -a
+source .env
+set +a
+
+3) Run builder with default input
+python -m scripts.build_darkkinome_ptm_dataset
+
+4) Run builder with explicit input path
+python -m scripts.build_darkkinome_ptm_dataset --input data/dark_kinome_ppi.csv
+
+Expected output:
+dark_kinome_runs/YYYY-MM-DD_HHMM/dark_kinome_ptms.csv
+

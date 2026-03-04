@@ -1,0 +1,71 @@
+uniprot_id,role,ptm_text,output_class,experiment_id,bait_uniprot,prey_uniprot,source
+Q7Z6M4,prey,"The mature mitochondrial protein exists in 2 forms differing at the level of their N-terminus, one is starting at residue 43 and the other at residue 48",2,BCKDK-mT,O14874,Q7Z6M4,dark_kinome_ppi
+Q9BQ95,prey,Ubiquitinated on Lys-372; leading to translocation in the nucleus together with RELA and NFKB1 and expression of NF-kappa-B-dependent genes,2,BCKDK-mT,O14874,Q9BQ95,dark_kinome_ppi
+Q13370,prey,Phosphorylation at Ser-295 mediates insulin-induced activation of PDE3B,2,PKMYT1-mT,Q99640,Q13370,dark_kinome_ppi
+O75197,prey,Phosphorylation of cytoplasmic PPPSP motifs regulates the signal transduction of the Wnt signaling pathway through acting as a docking site for AXIN1,2,PKMYT1-mT,Q99640,O75197,dark_kinome_ppi
+Q99758,prey,"N-glycosylated (PubMed:16959783, PubMed:24142515, PubMed:27177387). Localization at intracellular vesicles is accompanied by processing of oligosaccharide from high mannose type to complex type (PubMed:16959783, PubMed:27177387). N-linked glycosylation at Asn-124 and Asn-140 is required for stability and efficient anterograde trafficking and prevents from proteasomal degradation (PubMed:24142515)",2,PKMYT1-mT,Q99640,Q99758,dark_kinome_ppi
+Q99758,prey,Proteolytically cleaved by CTSL and to a lower extent by CTSB within multivesicular bodies (MVB) and lamellar bodies (LB) leading to a mature form of 150 kDa,2,PKMYT1-mT,Q99640,Q99758,dark_kinome_ppi
+Q9P1W9,prey,Autophosphorylated,2,mT-CAMK1G,Q96NX5,Q9P1W9,dark_kinome_ppi
+Q9UPX0,prey,N-glycosylated and sialylated. Not significantly O-glycosylated,2,mT-PAK6,Q9NQU5,Q9UPX0,dark_kinome_ppi
+Q969J3,prey,Myristoylation at Gly-2 mediates attachment to lysosome membranes,2,mT-DSTYK,Q6XUX3,Q969J3,dark_kinome_ppi
+Q92896,prey,Fucosylation is essential for binding to E-selectin,2,PKMYT1-mT,Q99640,Q92896,dark_kinome_ppi
+Q92896,prey,N-glycosylated. Contains sialic acid residues,2,PKMYT1-mT,Q99640,Q92896,dark_kinome_ppi
+P54198,prey,Sumoylated,2,TLK2-mT,Q86UE8,P54198,dark_kinome_ppi
+P54198,prey,Phosphorylated by CDK2/CCNA1 and CDK2/CCNE1 on Thr-555 in vitro. Also phosphorylated on Thr-555 and Ser-687 in vivo,2,TLK2-mT,Q86UE8,P54198,dark_kinome_ppi
+Q9NUB1,prey,Reversibly acetylated on Lys-642 (PubMed:16788062). The acetyl-CoA synthase activity is inhibited by acetylation and activated by deacetylation mediated by the deacetylase SIRT3,2,BCKDK-mT,O14874,Q9NUB1,dark_kinome_ppi
+O15121,prey,Myristoylation can target the enzyme to the mitochondria leading to an increase in ceramide levels,2,PKMYT1-mT,Q99640,O15121,dark_kinome_ppi
+Q96JN8,prey,Ubiquitinated; undergoes HERC2-dependent 'Lys-48' ubiquitination. This ubiquitination leads to proteasomal degradation,2,mT-RIOK2,Q9BVS4,Q96JN8,dark_kinome_ppi
+Q93100,prey,Ser-701 is probably phosphorylated by PKA,2,mT-PHKG2,P15735,Q93100,dark_kinome_ppi
+Q93100,prey,"Although the final Cys may be farnesylated, the terminal tripeptide is probably not removed, and the C-terminus is not methylated",2,mT-PHKG2,P15735,Q93100,dark_kinome_ppi
+Q13233,prey,Autophosphorylated,2,mT-DYRK1B,Q9Y463,Q13233,dark_kinome_ppi
+Q9Y2K6,prey,Ubiquitinated via a VHL-dependent pathway for proteasomal degradation,2,PKMYT1-mT,Q99640,Q9Y2K6,dark_kinome_ppi
+Q9H2G9,prey,"ADP-ribosylated by tankyrase TNKS and TNKS2. Poly-ADP-ribosylated protein is recognized by RNF146, followed by ubiquitination",2,PKMYT1-mT,Q99640,Q9H2G9,dark_kinome_ppi
+Q9H2G9,prey,"Ubiquitinated by RNF146 when poly-ADP-ribosylated, leading to its degradation",2,PKMYT1-mT,Q99640,Q9H2G9,dark_kinome_ppi
+O14874,bait,Autophosphorylated,1,BCKDK-mT,O14874,Q5T2R2,dark_kinome_ppi
+O14874,bait,Autophosphorylated,1,BCKDK-mT,O14874,Q9UI32,dark_kinome_ppi
+O14874,bait,Autophosphorylated,1,BCKDK-mT,O14874,Q8N3R3,dark_kinome_ppi
+O14874,bait,Autophosphorylated,1,BCKDK-mT,O14874,Q9NPE2,dark_kinome_ppi
+O14874,bait,Autophosphorylated,1,BCKDK-mT,O14874,Q8WWV3,dark_kinome_ppi
+O14874,bait,Autophosphorylated,1,BCKDK-mT,O14874,Q9NUB1,dark_kinome_ppi
+O14874,bait,Autophosphorylated,1,BCKDK-mT,O14874,Q02218,dark_kinome_ppi
+O14874,bait,Autophosphorylated,1,BCKDK-mT,O14874,O43766,dark_kinome_ppi
+O14874,bait,Autophosphorylated,1,BCKDK-mT,O14874,P78540,dark_kinome_ppi
+O14874,bait,Autophosphorylated,1,BCKDK-mT,O14874,P10109,dark_kinome_ppi
+O14874,bait,Autophosphorylated,1,BCKDK-mT,O14874,Q9BQ95,dark_kinome_ppi
+O14874,bait,Autophosphorylated,1,BCKDK-mT,O14874,P43155,dark_kinome_ppi
+O14874,bait,Autophosphorylated,1,BCKDK-mT,O14874,Q6P161,dark_kinome_ppi
+O14874,bait,Autophosphorylated,1,BCKDK-mT,O14874,P30038,dark_kinome_ppi
+O14874,bait,Autophosphorylated,1,BCKDK-mT,O14874,Q5SXM8,dark_kinome_ppi
+O14874,bait,Autophosphorylated,1,BCKDK-mT,O14874,Q7Z6M4,dark_kinome_ppi
+O14874,bait,Autophosphorylated,1,BCKDK-mT,O14874,Q86UY8,dark_kinome_ppi
+Q86UE8,bait,"Phosphorylated at Ser-750, probably by CHEK1",1,TLK2-mT,Q86UE8,Q9UKI8,dark_kinome_ppi
+Q86UE8,bait,Autophosphorylated; phosphorylation promotes the assembly of higher order oligomers and enzymatic activity,1,TLK2-mT,Q86UE8,Q9UKI8,dark_kinome_ppi
+Q86UE8,bait,"Phosphorylated at Ser-750, probably by CHEK1",1,TLK2-mT,Q86UE8,Q8N680,dark_kinome_ppi
+Q86UE8,bait,Autophosphorylated; phosphorylation promotes the assembly of higher order oligomers and enzymatic activity,1,TLK2-mT,Q86UE8,Q8N680,dark_kinome_ppi
+Q86UE8,bait,"Phosphorylated at Ser-750, probably by CHEK1",1,TLK2-mT,Q86UE8,P54198,dark_kinome_ppi
+Q86UE8,bait,Autophosphorylated; phosphorylation promotes the assembly of higher order oligomers and enzymatic activity,1,TLK2-mT,Q86UE8,P54198,dark_kinome_ppi
+Q9BVS4,bait,"Autophosphorylated (in vitro) (PubMed:19564402, PubMed:21880710). Phosphorylation at Ser-335, Ser-380, Ser-548 by PLK1 affects the timing of the metaphase-anaphase transition (PubMed:21880710)",1,mT-RIOK2,Q9BVS4,Q96JN8,dark_kinome_ppi
+Q9BVS4,bait,"Autophosphorylated (in vitro) (PubMed:19564402, PubMed:21880710). Phosphorylation at Ser-335, Ser-380, Ser-548 by PLK1 affects the timing of the metaphase-anaphase transition (PubMed:21880710)",1,mT-RIOK2,Q9BVS4,Q8WVS4,dark_kinome_ppi
+Q9BVS4,bait,"Autophosphorylated (in vitro) (PubMed:19564402, PubMed:21880710). Phosphorylation at Ser-335, Ser-380, Ser-548 by PLK1 affects the timing of the metaphase-anaphase transition (PubMed:21880710)",1,mT-RIOK2,Q9BVS4,Q6IPM2,dark_kinome_ppi
+Q96NX5,bait,May be prenylated on Cys-473,1,mT-CAMK1G,Q96NX5,Q9P1W9,dark_kinome_ppi
+Q9NQU5,bait,"Autophosphorylated. Phosphorylated by MAP2K6//MAPKK6, leading to PAK6 activation",1,mT-PAK6,Q9NQU5,Q9UPX0,dark_kinome_ppi
+P78368,bait,Autophosphorylated (PubMed:18794808). Phosphorylated by aPKC which promotes dissociation from the cell cortex (PubMed:26481050),1,mT-CSNK1G2,P78368,Q9Y5H2,dark_kinome_ppi
+P78368,bait,Autophosphorylated (PubMed:18794808). Phosphorylated by aPKC which promotes dissociation from the cell cortex (PubMed:26481050),1,mT-CSNK1G2,P78368,Q6ZNJ1,dark_kinome_ppi
+Q9Y463,bait,Autophosphorylated on tyrosine residues. Phosphorylated by MAP kinase. Tyrosine phosphorylation may be required for dimerization,1,mT-DYRK1B,Q9Y463,Q92539,dark_kinome_ppi
+Q9Y463,bait,Autophosphorylated on tyrosine residues. Phosphorylated by MAP kinase. Tyrosine phosphorylation may be required for dimerization,1,mT-DYRK1B,Q9Y463,Q71SY5,dark_kinome_ppi
+Q9Y463,bait,Autophosphorylated on tyrosine residues. Phosphorylated by MAP kinase. Tyrosine phosphorylation may be required for dimerization,1,mT-DYRK1B,Q9Y463,Q13233,dark_kinome_ppi
+Q99640,bait,Autophosphorylated. Phosphorylated by CDC2-CCNB1 complexes on undefined serine and threonine residues. The phosphorylation by CDC2-CCNB1 complexes may inhibit the catalytic activity,1,PKMYT1-mT,Q99640,Q8IUH4,dark_kinome_ppi
+Q99640,bait,Autophosphorylated. Phosphorylated by CDC2-CCNB1 complexes on undefined serine and threonine residues. The phosphorylation by CDC2-CCNB1 complexes may inhibit the catalytic activity,1,PKMYT1-mT,Q99640,O94851,dark_kinome_ppi
+Q99640,bait,Autophosphorylated. Phosphorylated by CDC2-CCNB1 complexes on undefined serine and threonine residues. The phosphorylation by CDC2-CCNB1 complexes may inhibit the catalytic activity,1,PKMYT1-mT,Q99640,Q13370,dark_kinome_ppi
+Q99640,bait,Autophosphorylated. Phosphorylated by CDC2-CCNB1 complexes on undefined serine and threonine residues. The phosphorylation by CDC2-CCNB1 complexes may inhibit the catalytic activity,1,PKMYT1-mT,Q99640,Q99758,dark_kinome_ppi
+Q99640,bait,Autophosphorylated. Phosphorylated by CDC2-CCNB1 complexes on undefined serine and threonine residues. The phosphorylation by CDC2-CCNB1 complexes may inhibit the catalytic activity,1,PKMYT1-mT,Q99640,Q7Z3D4,dark_kinome_ppi
+Q99640,bait,Autophosphorylated. Phosphorylated by CDC2-CCNB1 complexes on undefined serine and threonine residues. The phosphorylation by CDC2-CCNB1 complexes may inhibit the catalytic activity,1,PKMYT1-mT,Q99640,O75197,dark_kinome_ppi
+Q99640,bait,Autophosphorylated. Phosphorylated by CDC2-CCNB1 complexes on undefined serine and threonine residues. The phosphorylation by CDC2-CCNB1 complexes may inhibit the catalytic activity,1,PKMYT1-mT,Q99640,Q9UHQ9,dark_kinome_ppi
+Q99640,bait,Autophosphorylated. Phosphorylated by CDC2-CCNB1 complexes on undefined serine and threonine residues. The phosphorylation by CDC2-CCNB1 complexes may inhibit the catalytic activity,1,PKMYT1-mT,Q99640,A2VDJ0,dark_kinome_ppi
+Q99640,bait,Autophosphorylated. Phosphorylated by CDC2-CCNB1 complexes on undefined serine and threonine residues. The phosphorylation by CDC2-CCNB1 complexes may inhibit the catalytic activity,1,PKMYT1-mT,Q99640,O15121,dark_kinome_ppi
+Q99640,bait,Autophosphorylated. Phosphorylated by CDC2-CCNB1 complexes on undefined serine and threonine residues. The phosphorylation by CDC2-CCNB1 complexes may inhibit the catalytic activity,1,PKMYT1-mT,Q99640,Q6GPH6,dark_kinome_ppi
+Q99640,bait,Autophosphorylated. Phosphorylated by CDC2-CCNB1 complexes on undefined serine and threonine residues. The phosphorylation by CDC2-CCNB1 complexes may inhibit the catalytic activity,1,PKMYT1-mT,Q99640,Q9Y2K6,dark_kinome_ppi
+Q99640,bait,Autophosphorylated. Phosphorylated by CDC2-CCNB1 complexes on undefined serine and threonine residues. The phosphorylation by CDC2-CCNB1 complexes may inhibit the catalytic activity,1,PKMYT1-mT,Q99640,Q5K4L6,dark_kinome_ppi
+Q99640,bait,Autophosphorylated. Phosphorylated by CDC2-CCNB1 complexes on undefined serine and threonine residues. The phosphorylation by CDC2-CCNB1 complexes may inhibit the catalytic activity,1,PKMYT1-mT,Q99640,Q9H3E2,dark_kinome_ppi
+Q99640,bait,Autophosphorylated. Phosphorylated by CDC2-CCNB1 complexes on undefined serine and threonine residues. The phosphorylation by CDC2-CCNB1 complexes may inhibit the catalytic activity,1,PKMYT1-mT,Q99640,Q92896,dark_kinome_ppi
+Q99640,bait,Autophosphorylated. Phosphorylated by CDC2-CCNB1 complexes on undefined serine and threonine residues. The phosphorylation by CDC2-CCNB1 complexes may inhibit the catalytic activity,1,PKMYT1-mT,Q99640,Q9H2G9,dark_kinome_ppi
