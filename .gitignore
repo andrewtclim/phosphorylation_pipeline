@@ -42,3 +42,6 @@ OG_phosphorylation_pipeline_updated.py
 # Local OG sandbox
 OG_pipeline/
 **/versa_key_copy
+d_kinases/phospho_model/
+d_kinases/phospho_model_final/
+.DS_Store
